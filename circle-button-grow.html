@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Button</title>
+
+    <style>
+        @font-face {
+            font-family: "Inter";
+            font-weight: 300 800;
+            src: url('fonts/Inter-4.1/InterVariable.ttf');
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        body,
+        button {
+            font-family: "Inter", sans-serif;
+        }
+
+        .circle-button {
+            background-color: oklch(61.28% 0.14 253.4);
+            border: 0;
+            border-radius: 100px;
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            position: relative;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        .circle-button-bg {
+            background-color: white;
+            border-radius: 100px;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            height: 3.5rem;
+            width: 3.5rem;
+            transition: width 0.15s ease-in-out;
+        }
+
+        .circle-button:hover {
+            background-color: oklch(47.3% 0.155 263);
+        }
+
+        .circle-button:hover .circle-button-bg {
+            width: calc(100% - 1rem);
+        }
+
+        .circle-button-fg {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 100;
+        }
+
+        .circle-button-text {
+            font-size: 1.5rem;
+        }
+
+        .circle-button-arrow {
+            width: 3rem;
+            height: 3rem;
+            margin-right: -0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="circle-button">
+        <div class="circle-button-bg"></div>
+
+        <div class="circle-button-fg">
+            <span class="circle-button-text">Let's Go!</span>
+
+            <img src="icons/arrow-right-solid-full.svg" alt="" class="circle-button-arrow">
+        </div>
+    </button>
+</body>
+
+</html>
